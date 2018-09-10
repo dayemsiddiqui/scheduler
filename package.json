@@ -1,5 +1,5 @@
 {
-  "name": "whatsapp",
+  "name": "scheduler",
   "version": "1.0.0",
   "description": "",
   "main": "server/app.js",
@@ -15,14 +15,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cloudkibo/WhatsApp.git"
+    "url": "git+https://github.com/dayemsiddiqui/scheduler.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Cloudkibo/WhatsApp/issues"
+    "url": "https://github.com/dayemsiddiqui/scheduler/issues"
   },
-  "homepage": "https://github.com/Cloudkibo/WhatsApp#readme",
+  "homepage": "https://github.com/dayemsiddiqui/scheduler#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
