@@ -2,7 +2,8 @@ let mongoose = require('mongoose')
 let Schema = mongoose.Schema
 
 let queueSchema = new Schema({
-  userId: {type: Schema.Types.ObjectId, ref: 'users'},
+  // userId: {type: Schema.Types.ObjectId, ref: 'users'}, // Temporarily disabling it for testing
+  userId: String,
   jobId: {type: Schema.Types.ObjectId, ref: 'jobs'},
   job_type: {
     type: String,
@@ -17,7 +18,8 @@ let queueSchema = new Schema({
   schedule_time: Date,
   status: {
     type: String,
-    enum: ['pending', 'sent', 'failed']
+    enum: ['pending', 'sent', 'failed'],
+    default: 'pending'
   },
   response_time: String,
   created_at: {type: Date, default: Date.now()},
