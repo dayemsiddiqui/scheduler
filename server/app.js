@@ -7,6 +7,8 @@ const config = require('./config/environment/index')
 const app = express()
 
 mongoose.connect(config.mongo.uri, config.mongo.options)
+require('./api/v1/users/users.model')
+require('./config/passport')
 
 require('./config/express')(app)
 require('./config/setup')(app, config)
