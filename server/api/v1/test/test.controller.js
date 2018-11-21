@@ -2,7 +2,7 @@ const logger = require('../../../components/logger')
 const TAG = '/api/v1/test/index.js'
 const Test = require('./tests.model')
 exports.index = function (req, res) {
-  console.log('endpoint is hit')
+  console.log('endpoint is hit',  JSON.stringify(req.payload))
   const test = new Test({
     testPayload: 'API Endpoint Called'
   })
