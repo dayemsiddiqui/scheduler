@@ -25,7 +25,8 @@ const all = {
     options: {
       db: {
         safe: true
-      }
+      },
+      useNewUrlParser: true
     },
     uri: 'mongodb://localhost:27017/scheduler'
   }
