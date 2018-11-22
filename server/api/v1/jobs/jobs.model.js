@@ -2,11 +2,10 @@ let mongoose = require('mongoose')
 let Schema = mongoose.Schema
 
 let jobSchema = new Schema({
-  // userId: {type: Schema.Types.ObjectId, ref: 'users'}, // Temporarily disabling it for testing
-  userId: String,
+  userId: {type: Schema.Types.ObjectId, ref: 'users'},
   title: String,
   description: String,
-  schedule_time: Schema.Types.Mixed,
+  schedule_time: String,
   webhook: String,
   custom_payload: Schema.Types.Mixed,
   job_type: {
@@ -15,7 +14,7 @@ let jobSchema = new Schema({
   },
   method_type: {
     type: String,
-    enum: ['GET', 'POST']
+    enum: ['GET', 'POST', 'PUT', 'DELETE']
   },
   is_active: {type: Boolean, default: true},
   created_at: {type: Date, default: Date.now()},
