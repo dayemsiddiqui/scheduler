@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AuthBase from "./../../components/auth/authbase"
+import AuthBase from "../../components/auth/authbase"
 import { Link } from 'react-router-dom'
 class SignUp extends Component {
   render() {
