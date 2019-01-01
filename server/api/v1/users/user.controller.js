@@ -1,6 +1,6 @@
 const logger = require('../../../components/logger')
 const TAG = '/api/v1/users/index.js'
-const Users = require('./users.model')
+const Users = require('../../../models/users.model')
 const passport = require('passport')
 
 exports.register = function (req, res, next) {
