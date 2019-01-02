@@ -1,4 +1,5 @@
 const JobModel = require('./../../models/jobs.model')
+const errors = require('./../../errors')
 
 exports.createJob = (payload) => {
   const userId = payload.user.id
@@ -28,7 +29,26 @@ exports.getOneJob = async (payload) => {
   const jobId = payload.params.jobId
   const job = await JobModel.findOne({_id: jobId})
   if (!job) {
-    throw new Error('Job Not Found')
+    throw new Error(errors.JOB_DOES_NOT_EXIST.errorType)
+  }
+  return job
+}
+
+exports.deleteJob = async (payload) => {
+  const jobId = payload.params.jobId
+  const job = await JobModel.findOneAndRemove({_id: jobId})
+  if (!job) {
+    throw new Error(errors.JOB_DOES_NOT_EXIST.errorType)
+  }
+  return job
+}
+
+exports.updateJob = async (payload) => {
+  const jobId = payload.params.jobId
+  const updatedJob = payload.body
+  const job = await JobModel.findByIdAndUpdate(jobId, updatedJob, {new: true})
+  if (!job) {
+    throw new Error(errors.JOB_DOES_NOT_EXIST.errorType)
   }
   return job
 }
